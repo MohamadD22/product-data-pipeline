@@ -10,7 +10,7 @@ credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
 service = build('sheets', 'v4', credentials=credentials)
-spreadsheet_id = 'your_spreadsheet_id'
+spreadsheet_id = '1VWvXG3nF0oQl-vpus4XiSQ798QMfwHFbnWw32ulIoD4'
 
 # Function to read keywords from Google Sheets
 def read_keywords():
