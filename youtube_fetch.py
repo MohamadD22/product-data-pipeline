@@ -1,7 +1,8 @@
-#Step 1: Define the Function to Fetch Videos
+
 
 from googleapiclient.discovery import build
 
+# Define the Function to Fetch Videos
 def fetch_youtube_videos(keyword):
     api_key = 'AIzaSyBEUj7YIBHUVFUpJxHiBwzWO6IhppYtb1A'  # Replace this with your actual YouTube API key
     youtube = build('youtube', 'v3', developerKey=api_key)
@@ -19,7 +20,7 @@ def fetch_youtube_videos(keyword):
         videos.append(video)
     return videos
 
-# Step 2: Define the Function to Write Video Data to Google Sheets
+# Define the Function to Write Video Data to Google Sheets
 
 def write_video_data(videos):
     sheet = service.spreadsheets()
@@ -27,7 +28,7 @@ def write_video_data(videos):
     body = {'values': values}
     sheet.values().update(spreadsheetId=spreadsheet_id, range='Multimedia Content!A2', valueInputOption='RAW', body=body).execute()
 
-# Step 3: Integrate These Functions into Your Main Script
+# Integrate These Functions into the Main Script
 
 if __name__ == '__main__':
     keywords = read_keywords()
