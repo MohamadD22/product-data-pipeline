@@ -44,7 +44,7 @@ def write_product_data(products):
     body = {'values': values}
     result = sheet.values().update(spreadsheetId=spreadsheet_id, range='Product Data!A2', valueInputOption='RAW', body=body).execute()
     print("Data written to sheet:", result)  # Debugging statement
-
+# Main function with debugging info (Note: It didn't work; the data didn't populate in google sheet as expected as I tried to solve this issue many times)
 if __name__ == '__main__':
     keywords = read_keywords()
     all_products = []
